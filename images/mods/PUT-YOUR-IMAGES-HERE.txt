@@ -1,0 +1,1 @@
+﻿Drop mod preview images here (e.g. mod-five.jpg). Then set image: images/mods/mod-five.jpg for that mod in main.js.

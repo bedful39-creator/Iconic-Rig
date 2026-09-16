@@ -1,0 +1,1 @@
+﻿Drop texture pack preview images here (e.g. pack-one.jpg). Then set image: images/packs/pack-one.jpg for that pack in main.js.
