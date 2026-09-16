@@ -1,0 +1,27 @@
+{
+  "note": "Spawner option 5 - the mob itself: bone skeleton figure with green eyes.",
+  "palette": {
+    "w": "#eceae3",
+    "s": "#c6c3ba",
+    "k": "#0e1013",
+    "g": "#4ade80"
+  },
+  "grid": [
+    "................",
+    "................",
+    "......wwww......",
+    ".....wwwwww.....",
+    ".....wgwwgw.....",
+    ".....wwwwww.....",
+    "......wwww......",
+    "....wwwwwwww....",
+    "...w.wwwwww.w...",
+    "...w.wskksw.w...",
+    "...ww.wwww.ww...",
+    "......wwww......",
+    "......ww..ww....",
+    "......ww..ww....",
+    "......ww..ww....",
+    ".....ww....ww..."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "note": "Spawner option 3 - green glass cube with a lattice (ties in with the Glass to Spawner pack).",
+  "palette": {
+    "L": "#6fe3a6",
+    "G": "#1f9e5f",
+    "w": "#d8fbec"
+  },
+  "grid": [
+    "LLLLLLLLLLLLLLLL",
+    "LGGGGGGGGGGGGGGL",
+    "LGGGGGGGGGGGGGGL",
+    "LGGGGGGGGGGGGGGL",
+    "LGGGGGGGGGGGGGGL",
+    "LLLLLLLLLLLLLLLL",
+    "LGGGGLGGGGLGGGGL",
+    "LGGGGLGGGGLGGGGL",
+    "LGGGGLGGGGLGGGGL",
+    "LGGGGLGGGGLGGGGL",
+    "LLLLLLLLLLLLLLLL",
+    "LGGGGLGGGGLGGGGL",
+    "LGGGGLGGGGLGGGGL",
+    "LGGGGLGGGGLGGGGL",
+    "LGGGGLGGGGLGGGGL",
+    "LLLLLLLLLLLLLLLL"
+  ]
+}

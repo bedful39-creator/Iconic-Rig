@@ -1,0 +1,17 @@
+{
+  "palette": { "D": "#1c2024", "G": "#6b7280", "L": "#9aa3ae" },
+  "grid": [
+    "DDDDDDDDDDDD",
+    "DLLGGGGGGLLD",
+    "DLGGGGGGGGLD",
+    "DGGGGGGGGGGD",
+    "DGGGDDDDGGGD",
+    "DGGGDLLDGGGD",
+    "DGGGDLLDGGGD",
+    "DGGGDDDDGGGD",
+    "DGGGGGGGGGGD",
+    "DLGGGGGGGGLD",
+    "DLLGGGGGGLLD",
+    "DDDDDDDDDDDD"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "palette": {
+    "B": "#8b939e",
+    "K": "#0d1014",
+    "W": "#e7e9ee",
+    "S": "#0d1014",
+    "G": "#2f9e63"
+  },
+  "grid": [
+    "................",
+    "................",
+    "..BBBBBBBBBBBB..",
+    "..BKKBKKKKBKKB..",
+    "..BKKBWWWWBKKB..",
+    "..BKKBWSSWBKKB..",
+    "..BKKBKWWKBKKB..",
+    "..BBBBBBBBBBBB..",
+    "..BKGBKKKKBGKB..",
+    "..BKGKKKKKKGKB..",
+    "..BKKBKKKKBKKB..",
+    "..BBBBBBBBBBBB..",
+    "................",
+    "................",
+    "................",
+    "................"
+  ]
+}

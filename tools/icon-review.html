@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Icon review — Iconic Rig</title>
+<style>
+  :root {
+    --bg: #0e0e11; --panel: #16161b; --line: #26262e;
+    --text: #f2f3f7; --muted: #9ea3b0; --dim: #6b7080; --accent: #2f56e0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0 auto; padding: 34px 22px 70px; max-width: 1180px;
+    background: var(--bg); color: var(--text);
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  h1 { font-size: 24px; margin: 0 0 6px; letter-spacing: -0.02em; }
+  h2 { font-size: 17px; margin: 38px 0 4px; letter-spacing: -0.01em; }
+  .kicker { color: var(--dim); font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  p.lede { color: var(--muted); font-size: 14px; line-height: 1.55; margin: 8px 0 22px; max-width: 76ch; }
+  code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; color: #cdd3e2; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(215px, 1fr)); gap: 14px; }
+  .cell {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+    padding: 14px; display: flex; flex-direction: column; gap: 10px; align-items: center;
+  }
+  .pair { display: flex; align-items: center; gap: 12px; }
+  .shot { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .shot img { width: 92px; height: 92px; object-fit: contain; }
+  .shot.big img { width: 108px; height: 108px; }
+  /* old renders kept the hard pixel edges, new ones are filtered smoothly */
+  .old img { image-rendering: pixelated; filter: saturate(0.96); }
+  .new img { image-rendering: auto; }
+  .cap { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dim); font-weight: 700; }
+  .cap.new { color: #8fe0b0; }
+  .label { font-size: 13.5px; font-weight: 600; text-align: center; }
+  .sub { font-size: 11.5px; color: var(--dim); font-family: ui-monospace, Menlo, monospace; word-break: break-all; text-align: center; }
+  .card-preview {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+    padding: 12px; display: flex; flex-direction: column; align-items: center; gap: 8px; min-height: 138px;
+    justify-content: center;
+    background-image: radial-gradient(62% 58% at 50% 46%, rgba(255,255,255,0.055), transparent 72%);
+  }
+  .note { color: var(--dim); font-size: 12.5px; margin-top: 10px; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 34px 0 0; }
+</style>
+</head>
+<body>
+  <div class="kicker">Iconic Rig</div>
+  <h1>Icon review</h1>
+  <p class="lede">
+    Nothing here is on the live site yet — this page is just for picking. Everything below is drawn at
+    the size it appears on a card, so it's an honest look at how it reads.
+  </p>
+
+  <h2>1. Texture pack icons — old vs new</h2>
+  <p class="lede">
+    The new versions add a light-from-above shading pass and stop the hard pixel upscale (which is what
+    made them read as blocky). Same shapes, same packs — just finished properly.
+  </p>
+  <div class="grid" id="packGrid"></div>
+  <p class="note">Left = what's on the site now (backed up at <code>tools/old-icons/packs/</code>). Right = the new render.</p>
+
+  <hr />
+
+  <h2>2. Spawner icon — 5 options</h2>
+  <p class="lede">
+    Each option is shown twice: <strong>left</strong> = crisp pixel style (matching your other 4 mod icons as
+    they are now), <strong>right</strong> = the new shaded + softer style. Tell me the number, and whether you
+    want it crisp or shaded.
+  </p>
+  <div class="grid" id="spawnerGrid"></div>
+
+  <hr />
+
+  <h2>3. What the shaded style does to an existing mod</h2>
+  <p class="lede">
+    Your current Gambling Rig icon next to the same sprite re-rendered with the new finish — so you can judge
+    whether it's worth restyling all five mod icons for consistency, or leaving them as they are.
+  </p>
+  <div class="grid">
+    <div class="cell">
+      <div class="pair">
+        <div class="shot old"><img src="../images/mods/gambling-rig.png" alt="Gambling Rig, current" /><span class="cap">Current</span></div>
+        <div class="shot new"><img src="../images/options/gambling-rig-modern.png" alt="Gambling Rig, shaded" /><span class="cap new">Shaded</span></div>
+      </div>
+      <div class="label">Gambling Rig</div>
+    </div>
+  </div>
+
+  <script>
+    const PACKS = [
+      ["Green Glass to Spawner", "green-glass-spawner"],
+      ["Shears to Elytra", "shears-elytra"],
+      ["Lootdrop Megapack", "lootdrop-megapack"],
+      ["Netherite Mega Pack", "netherite-megapack"],
+      ["Stained Glass to Lantern and Beacon", "stained-glass-lantern"],
+      ["Deepslate Bricks to Gilded Blackstone", "deepslate-gilded"],
+      ["Orange Dye to Netherite Ingot", "orange-dye-ingot"],
+      ["Crystal Optimizer", "crystal-optimizer"],
+      ["Anti Block Rotation", "anti-block-rotation"],
+    ];
+
+    // One card per pack, showing the icon the way .pack-top renders it.
+    document.getElementById("packGrid").innerHTML = PACKS.map(([name, file]) => `
+      <div class="cell">
+        <div class="card-preview">
+          <div class="shot old"><img src="old-icons/packs/${file}.png" alt="${name}, current" /></div>
+          <div class="shot new"><img src="../images/packs/${file}.png" alt="${name}, new" /></div>
+        </div>
+        <div class="label">${name}</div>
+        <div class="pair" style="gap:14px">
+          <span class="cap">Old</span><span class="cap new">New</span>
+        </div>
+      </div>`).join("");
+
+    const SPAWNERS = [
+      ["1", "Cage core", "spawner-1-cage-core", "Clean cage lattice, glowing green core"],
+      ["2", "Skull cage", "spawner-2-skull-cage", "Caged frame with a skeleton skull"],
+      ["3", "Glass cube", "spawner-3-glass-cube", "Green glass lattice block"],
+      ["4", "Heavy emblem", "spawner-4-heavy-emblem", "Chunky frame, wide bars, big core"],
+      ["5", "Skeleton mob", "spawner-5-skeleton-mob", "The mob itself, green eyes"],
+    ];
+
+    document.getElementById("spawnerGrid").innerHTML = SPAWNERS.map(([n, title, file, sub]) => `
+      <div class="cell">
+        <div class="pair">
+          <div class="shot big"><img src="../images/options/${file}.png" alt="${title}, crisp" /><span class="cap">Crisp</span></div>
+          <div class="shot big"><img src="../images/options/soft/${file}.png" alt="${title}, shaded" /><span class="cap new">Shaded</span></div>
+        </div>
+        <div class="label">${n}. ${title}</div>
+        <div class="sub">${sub}</div>
+      </div>`).join("");
+  </script>
+</body>
+</html>

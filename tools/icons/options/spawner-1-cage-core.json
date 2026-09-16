@@ -1,0 +1,28 @@
+{
+  "note": "Spawner option 1 - clean cage lattice with a glowing green core. (E = deep green, g = bright green: PowerShell JSON keys are case-insensitive.)",
+  "palette": {
+    "F": "#9aa0a6",
+    "b": "#7d838a",
+    "d": "#15171b",
+    "E": "#1f7a45",
+    "g": "#4ade80"
+  },
+  "grid": [
+    "FFFFFFFFFFFFFFFF",
+    "FddddbddddbddddF",
+    "FddddbddddbddddF",
+    "FddddbddddbddddF",
+    "FddddbddddbddddF",
+    "FbbbbbbbbbbbbbbF",
+    "FddddbEEEEbddddF",
+    "FddddbEggEbddddF",
+    "FddddbEggEbddddF",
+    "FddddbEEEEbddddF",
+    "FbbbbbbbbbbbbbbF",
+    "FddddbddddbddddF",
+    "FddddbddddbddddF",
+    "FddddbddddbddddF",
+    "FddddbddddbddddF",
+    "FFFFFFFFFFFFFFFF"
+  ]
+}

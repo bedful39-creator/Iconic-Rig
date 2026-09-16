@@ -1,0 +1,28 @@
+{
+  "note": "Spawner option 4 - heavy emblem build: thick frame, wide bars, big glowing core. (E = deep green, g = bright green.)",
+  "palette": {
+    "F": "#a9afb5",
+    "b": "#5d636a",
+    "d": "#101216",
+    "E": "#1f7a45",
+    "g": "#5ee89a"
+  },
+  "grid": [
+    "FFFFFFFFFFFFFFFF",
+    "FFFFFFFFFFFFFFFF",
+    "FFdddddbbdddddFF",
+    "FFdddddbbdddddFF",
+    "FFdddddbbdddddFF",
+    "FFdddEEbbEEdddFF",
+    "FFdddEEbbEEdddFF",
+    "FFbbbbbbbbbbbbFF",
+    "FFbbbbbbbbbbbbFF",
+    "FFdddEEbbEEdddFF",
+    "FFdddEEbbEEdddFF",
+    "FFdddddbbdddddFF",
+    "FFdddddbbdddddFF",
+    "FFdddddbbdddddFF",
+    "FFFFFFFFFFFFFFFF",
+    "FFFFFFFFFFFFFFFF"
+  ]
+}

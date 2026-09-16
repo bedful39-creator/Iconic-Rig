@@ -1,0 +1,28 @@
+{
+  "note": "Spawner option 2 - caged frame with a skeleton skull (green glowing eyes).",
+  "palette": {
+    "F": "#8f959b",
+    "b": "#6b7178",
+    "w": "#eceae3",
+    "k": "#0e1013",
+    "G": "#37e07a"
+  },
+  "grid": [
+    "FFFFFFFFFFFFFFFF",
+    "Fb............bF",
+    "Fb...wwwwww...bF",
+    "Fb..wwwwwwww..bF",
+    "Fb.wwwwwwwwww.bF",
+    "Fb.wwGGwwGGww.bF",
+    "Fb.wwGGwwGGww.bF",
+    "Fb.wwwwwwwwww.bF",
+    "Fb..wwwkkwww..bF",
+    "Fb..wwwwwwww..bF",
+    "Fb...wwwwww...bF",
+    "Fb....wwww....bF",
+    "Fb....wwww....bF",
+    "Fb............bF",
+    "Fb............bF",
+    "FFFFFFFFFFFFFFFF"
+  ]
+}

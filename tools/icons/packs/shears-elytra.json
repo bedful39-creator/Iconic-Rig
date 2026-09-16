@@ -1,0 +1,17 @@
+{
+  "palette": { "D": "#14161a", "M": "#b8bec8", "R": "#c0392b", "K": "#2a2d33" },
+  "grid": [
+    "..DD....DD..",
+    "..DMD..DMD..",
+    "..DMD..DMD..",
+    "..DMD..DMD..",
+    "..DMD..DMD..",
+    "...DMDDMD...",
+    "...DKDDKD...",
+    "..DRKMMKRD..",
+    "..DRD..DRD..",
+    "..DRD..DRD..",
+    "..DDD..DDD..",
+    "............"
+  ]
+}

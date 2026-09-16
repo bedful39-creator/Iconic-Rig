@@ -1,0 +1,26 @@
+{
+  "palette": {
+    "B": "#8b939e",
+    "K": "#0d1014",
+    "G": "#2f9e63",
+    "H": "#4ade80"
+  },
+  "grid": [
+    ".............",
+    "BBBBBBBBBBBBB",
+    "BKKKBKKKBKKKB",
+    "BKKKBKKKBKKKB",
+    "BKKKBKKKBKKKB",
+    "BBBBBBBBBBBBB",
+    "BKKKBGGGBKKKB",
+    "BKKKBGHGBKKKB",
+    "BKKKBGGGBKKKB",
+    "BBBBBBBBBBBBB",
+    "BKKKBKKKBKKKB",
+    "BKKKBKKKBKKKB",
+    "BKKKBKKKBKKKB",
+    "BBBBBBBBBBBBB",
+    ".............",
+    "............."
+  ]
+}
