@@ -1,0 +1,21 @@
+All 9 texture packs are installed in this folder, and their Download buttons on
+the site are live. To swap one out, just drop the new zip in here using the same
+filename (or paste an external URL into that pack's link: "" in main.js).
+
+WHAT'S IN HERE                    ORIGINAL PACK FILE
+  green-glass-spawner.zip                        Green Stained Glass to Spawner
+  shears-to-elytra.zip                           Pink Version - Shears to Elytra
+  lootdrop-megapack.zip                          Lootdrop Megapack v2
+  netherite-mega-pack.zip                        Diamond to Netherite
+  stained-glass-to-lantern-and-beacon.zip        Stained to Beacon Lantern
+  deepslate-bricks-to-gilded-blackstone.zip      Bricks to Blackstone
+  orange-dye-to-netherite-ingot.zip              Orange to Ingot
+  crystal-optimizer.zip                          Ryzen's Crystal Optimizer
+  anti-block-rotation.zip                        Anti Block Rotation
+
+THE FREE MOD IS ALSO IN HERE
+  IconicRig.jar      the Rig mod, served by the free "Gambling Rig" card as a
+                     direct download. Its card button falls back to "Get on
+                     Discord" automatically if this file is ever removed.
+
+  The four paid mods are arranged on Discord by design and need no file here.
