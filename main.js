@@ -23,16 +23,17 @@ const CONFIG = {
    ============================================================ */
 const MODS = [
   {
-    name: "Gambling Rig",
-    desc: "Rig your gambling in-game — 50/50, 45/45/10, blackjack, paper and piko, all faked live.",
+    // The free slot: direct download, "Most Popular", renders first.
+    name: "Elytra Mod",
+    desc: "Real elytra physics with a chestplate on — fly like vanilla intended.",
     tags: ["Fabric", "1.21.1"],
     price: null,
     link: "downloads/IconicRig.jar", // direct download (file lives in downloads/)
     hot: true,
-    image: "images/mods/gambling-rig.png",
-    glow: "rgba(226, 57, 62, 0.42)", // red light
-    stripeA: "#2a0a0c",
-    stripeB: "#4a1216",
+    image: "images/mods/elytra-mod.png",
+    glow: "rgba(78, 168, 255, 0.42)", // blue light
+    stripeA: "#08192e",
+    stripeB: "#0f2f52",
   },
   {
     name: "Skeleton Spawners",
@@ -71,16 +72,17 @@ const MODS = [
     stripeB: "#4a1a3c",
   },
   {
-    name: "Elytra Mod",
-    desc: "Real elytra physics with a chestplate on — fly like vanilla intended.",
+    // Paid slot — arranged on Discord, no file hosted.
+    name: "Gambling Rig",
+    desc: "Rig your gambling in-game — 50/50, 45/45/10, blackjack, paper and piko, all faked live.",
     tags: ["Fabric", "1.21.11"],
     price: "100M",
-    link: null,
+    link: null, // null = buy via Discord
     hot: false,
-    image: "images/mods/elytra-mod.png",
-    glow: "rgba(78, 168, 255, 0.42)", // blue light
-    stripeA: "#08192e",
-    stripeB: "#0f2f52",
+    image: "images/mods/gambling-rig.png",
+    glow: "rgba(226, 57, 62, 0.42)", // red light
+    stripeA: "#2a0a0c",
+    stripeB: "#4a1216",
   },
 ];
 
