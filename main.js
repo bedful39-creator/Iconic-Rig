@@ -26,7 +26,7 @@ const MODS = [
     // The free slot: direct download, "Most Popular", renders first.
     name: "Elytra Mod",
     desc: "Real elytra physics with a chestplate on — fly like vanilla intended.",
-    tags: ["Fabric", "1.21.1"],
+    tags: ["Fabric", "1.21.11"],
     price: null,
     link: "downloads/IconicRig.jar", // direct download (file lives in downloads/)
     hot: true,
@@ -75,7 +75,7 @@ const MODS = [
     // Paid slot — arranged on Discord, no file hosted.
     name: "Gambling Rig",
     desc: "Rig your gambling in-game — 50/50, 45/45/10, blackjack, paper and piko, all faked live.",
-    tags: ["Fabric", "1.21.11"],
+    tags: ["Fabric", "1.21.1"],
     price: "10M",
     link: null, // null = buy via Discord
     hot: false,
