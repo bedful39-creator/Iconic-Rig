@@ -28,7 +28,7 @@ const MODS = [
     desc: "Real elytra physics with a chestplate on — fly like vanilla intended.",
     tags: ["Fabric", "1.21.11"],
     price: null,
-    link: "downloads/IconicRig.jar", // direct download (file lives in downloads/)
+    link: "downloads/fake-elytra.jar", // direct download (file lives in downloads/)
     hot: true,
     image: "images/mods/elytra-mod.png",
     glow: "rgba(78, 168, 255, 0.42)", // blue light
