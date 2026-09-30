@@ -368,6 +368,18 @@ img { display: block; }
 }
 .dl-btn.pending:hover { background: transparent; }
 
+/* Inline notice shown under the page header when a download click hits a
+   missing file on the server (instead of a browser default error bar). */
+.dl-missing-note {
+  background: #2a1414;
+  border: 1px solid #4a2222;
+  color: #f0b8b8;
+  font-size: 13.5px;
+  padding: 10px 16px;
+ border-radius: var(--r-md);
+  margin-bottom: 18px;
+}
+
 /* Download cooldown — the button dims and counts down for 10s after a
    download. The overlay sits on top so the label and icon stay put. */
 .dl-btn.cooling,

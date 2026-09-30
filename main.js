@@ -443,15 +443,51 @@ function startDlCooldown() {
   syncDlLock();
 }
 
-// Capture phase, so the click is stopped before the browser starts the download.
+// A click on a download link whose file isn't on the server: tell the user
+// exactly what failed instead of a browser default error bar.
+function reportMissingDownload(file) {
+  const line = document.createElement("div");
+  line.className = "dl-missing-note";
+  line.textContent = "That file isn't on the server (" + file + "). It was probably never uploaded — tell the site owner.";
+  const grid = document.querySelector(".grid, .dir-grid");
+  if (grid) grid.parentNode.insertBefore(line, grid);
+  setTimeout(() => line.remove(), 8000);
+}
+
+// Capture phase, so the click is checked before the browser starts navigating.
 document.addEventListener("click", e => {
   const link = e.target.closest ? e.target.closest("a[download]") : null;
-  if (!link) return;
+  if (!link || link.dataset.auto) return; // dataset.auto = our own re-triggered click
   if (dlLockedFor() > 0) {
     e.preventDefault();
     return;
   }
-  startDlCooldown();
+  // Hold the browser's navigation until we've confirmed the file is really on
+  // the server. If it is, the download is re-triggered programmatically and
+  // the 10s cooldown arms. If it isn't, the click is swallowed and an inline
+  // note says exactly which file is missing — no browser error bar.
+  e.preventDefault();
+  const url = link.getAttribute("href");
+  const reachable = () =>
+    fetch(url, { method: "HEAD", cache: "no-store" })
+      .then(r => r.ok)
+      .catch(() => false)
+      .then(ok => ok
+        ? true
+        : fetch(url, { headers: { Range: "bytes=0-0" }, cache: "no-store" })
+            .then(r => r.ok || r.status === 206)
+            .catch(() => false));
+  reachable().then(ok => {
+    if (!ok) { reportMissingDownload(url); return; }
+    const again = document.createElement("a");
+    again.href = url;
+    again.setAttribute("download", "");
+    again.dataset.auto = "1"; // don't re-enter this handler
+    document.body.appendChild(again);
+    again.click();
+    again.remove();
+    startDlCooldown();
+  });
 }, true);
 
 // Pick up a cooldown that was already running before this page loaded.
