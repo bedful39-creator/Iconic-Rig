@@ -238,12 +238,11 @@ function footHtml(item) {
   const discordLabel = isFree ? "Get on Discord" : "Buy on Discord";
   let btn;
   if (item.link) {
-    // A self-hosted file (downloads/...) is probed on load: until the file is
-    // actually there the card hands you the Discord button instead of a 404.
-    const attrs = isLocalLink(item.link)
-      ? ` data-file="${item.link}" data-dl-label="${discordLabel}"`
-      : "";
-    btn = `<a class="get-btn" href="${item.link}" download${attrs}>${ICON_DOWNLOAD} Download</a>`;
+    // Render the real download immediately — no probing, no downgrade. The old
+    // code held the button hostage to a HEAD request and swapped it for
+    // "Get on Discord" whenever that probe failed, which broke the button on
+    // some VPS hosts even though the file was sitting right there.
+    btn = `<a class="get-btn" href="${item.link}" download>${ICON_DOWNLOAD} Download</a>`;
   } else {
     btn = discordBtn(discordLabel);
   }
@@ -299,8 +298,11 @@ const isLocalLink = u => typeof u === "string" && u.length > 0 && !/^(https?:)?\
 async function fileExists(url) {
   if (!/^https?:$/.test(location.protocol)) return false; // opened straight off disk
   try {
-    const r = await fetch(url, { method: "HEAD", cache: "no-store" });
-    return r.ok;
+    let r = await fetch(url, { method: "HEAD", cache: "no-store" });
+    if (r.ok) return true;
+    // Some servers reject or mishandle HEAD — retry with a 1-byte ranged GET.
+    r = await fetch(url, { headers: { Range: "bytes=0-0" }, cache: "no-store" });
+    return r.ok || r.status === 206;
   } catch {
     return false;
   }
@@ -334,9 +336,10 @@ async function activateLocalDownloads() {
       a.setAttribute("download", "");
       a.innerHTML = el.dataset.pack ? "Download" : `${ICON_DOWNLOAD} Download`;
       el.replaceWith(a);
-    } else if (el.dataset.dlLabel) {
-      // Mod with a self-hosted link but no file yet — send them to Discord.
-      el.replaceWith(nodeFromHtml(discordBtn(el.dataset.dlLabel)));
+    } else {
+      // Pack file not on the server (yet) — leave the greyed pill, and say
+      // exactly what's missing in the console so it's obvious what to upload.
+      console.warn("[Iconic Rig] no download at " + file + " — upload that file to the server, or set link: for it in main.js");
     }
   });
 }
